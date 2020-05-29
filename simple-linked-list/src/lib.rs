@@ -11,7 +11,7 @@ pub struct Node<T> {
 
 impl<T> SimpleLinkedList<T> {
     pub fn new() -> Self {
-        SimpleLinkedList {head: None}
+        SimpleLinkedList { head: None }
     }
 
     pub fn len(&self) -> usize {
@@ -39,13 +39,13 @@ impl<T> SimpleLinkedList<T> {
     }
 
     pub fn peek(&self) -> Option<&T> {
-        self.head.as_ref().and_then(|head| {
-            Some(&head.data)
-        })
+        self.head.as_ref().and_then(|head| Some(&head.data))
     }
 
     pub fn rev(self) -> SimpleLinkedList<T>
-    where SimpleLinkedList<T>: Into<Vec<T>> {
+    where
+        SimpleLinkedList<T>: Into<Vec<T>>,
+    {
         let mut vec: Vec<T> = self.into();
         vec.reverse();
         vec.into_iter().collect()
@@ -74,7 +74,9 @@ impl<T> FromIterator<T> for SimpleLinkedList<T> {
 // demands more of the student than we expect at this point in the track.
 
 impl<T> Into<Vec<T>> for SimpleLinkedList<T>
-where T: std::marker::Copy {
+where
+    T: std::marker::Copy,
+{
     fn into(self) -> Vec<T> {
         let mut v: Vec<T> = vec![];
         let mut node = &self.head;

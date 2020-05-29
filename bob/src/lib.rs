@@ -10,6 +10,6 @@ pub fn reply(message: &str) -> &str {
         _ if is_uppercase && is_question => "Calm down, I know what I'm doing!",
         _ if is_uppercase => "Whoa, chill out!",
         _ if is_question => "Sure.",
-        _ => "Whatever."
+        _ => "Whatever.",
     }
 }

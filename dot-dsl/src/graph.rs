@@ -1,11 +1,14 @@
-use std::collections::HashMap;
 use graph_items::edge::Edge;
 use graph_items::node::Node;
+use std::collections::HashMap;
 
 pub mod graph_items;
 
 pub fn convert_attrs(attrs: &[(&str, &str)]) -> HashMap<String, String> {
-    attrs.iter().map(|(a, b)| (a.to_string(), b.to_string())).collect()
+    attrs
+        .iter()
+        .map(|(a, b)| (a.to_string(), b.to_string()))
+        .collect()
 }
 
 #[derive(Debug, PartialEq, Clone, Default)]
@@ -17,9 +20,7 @@ pub struct Graph {
 
 impl Graph {
     pub fn new() -> Self {
-        Graph {
-            ..Self::default()
-        }
+        Graph { ..Self::default() }
     }
 
     pub fn with_nodes(mut self, nodes: &Vec<Node>) -> Self {

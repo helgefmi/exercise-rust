@@ -4,7 +4,7 @@ use std::collections::HashMap;
 #[derive(Debug, PartialEq, Clone, Default)]
 pub struct Node {
     pub name: String,
-    attrs: HashMap<String, String>
+    attrs: HashMap<String, String>,
 }
 
 impl Node {

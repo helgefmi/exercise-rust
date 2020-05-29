@@ -1,5 +1,5 @@
-use std::iter::once;
 use std::collections::HashMap;
+use std::iter::once;
 
 const NUCLEOTIDES: &'static str = "ACGT";
 
@@ -15,8 +15,10 @@ pub fn nucleotide_counts(dna: &str) -> Result<HashMap<char, usize>, char> {
     let mut map = HashMap::new();
     for c in NUCLEOTIDES.chars() {
         match count(c, dna) {
-            Ok(num) => { map.insert(c, num); },
-            Err(chr) => return Err(chr)
+            Ok(num) => {
+                map.insert(c, num);
+            }
+            Err(chr) => return Err(chr),
         }
     }
     Ok(map)

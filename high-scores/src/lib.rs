@@ -1,6 +1,6 @@
 #[derive(Debug)]
 pub struct HighScores<'a> {
-    scores: &'a [u32]
+    scores: &'a [u32],
 }
 
 impl<'a> HighScores<'a> {

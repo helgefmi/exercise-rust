@@ -5,7 +5,7 @@ use std::collections::HashMap;
 pub struct Edge {
     left: String,
     right: String,
-    attrs: HashMap<String, String>
+    attrs: HashMap<String, String>,
 }
 
 impl Edge {

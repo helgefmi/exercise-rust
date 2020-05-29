@@ -8,8 +8,12 @@ pub fn brackets_are_balanced(string: &str) -> bool {
         match c {
             '(' | '[' | '{' => stack.push(c),
             ')' | ']' | '}' => match stack.pop() {
-                Some(top) => if !matching_brackets(top, c) { return false; }
-                None => return false
+                Some(top) => {
+                    if !matching_brackets(top, c) {
+                        return false;
+                    }
+                }
+                None => return false,
             },
             _ => {}
         }

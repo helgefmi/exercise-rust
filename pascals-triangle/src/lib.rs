@@ -18,7 +18,10 @@ impl PascalsTriangle {
                 Some(last_row) => {
                     let zipped = last_row.iter().zip(last_row.iter().skip(1));
                     let sums = zipped.map(|(a, b)| a + b);
-                    std::iter::once(1).chain(sums).chain(iter::once(1)).collect()
+                    std::iter::once(1)
+                        .chain(sums)
+                        .chain(iter::once(1))
+                        .collect()
                 }
             };
             rows.push(row);

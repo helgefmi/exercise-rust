@@ -10,7 +10,13 @@ pub fn abbreviate(phrase: &str) -> String {
         } else if word.chars().all(char::is_uppercase) || word.chars().all(char::is_lowercase) {
             ret.push(word.chars().next().unwrap());
         } else {
-            ret.push_str(&word.chars().into_iter().filter(char::is_ascii_uppercase).collect::<String>());
+            ret.push_str(
+                &word
+                    .chars()
+                    .into_iter()
+                    .filter(char::is_ascii_uppercase)
+                    .collect::<String>(),
+            );
         }
     }
 
