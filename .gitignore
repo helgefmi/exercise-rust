@@ -1,3 +1,4 @@
 */.gitignore
 */.exercism/
 */target/
+*/Cargo.lock
